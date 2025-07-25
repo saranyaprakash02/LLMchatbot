@@ -1,71 +1,71 @@
-# SEQATO LLM Awareness – Month 1 Projects
+# 🗨️ Local LLM Chat App
 
-## 🧠 Overview of Tools & Technologies
+This project is part of the SEQATO LLM Awareness & Portfolio Development Program.
 
-### 🔹 LLMs (Large Language Models)
-Used for tasks such as chat, summarization, Q&A, and more.
-
----
-
-### 🔧 Technologies Involved
-
-- **Streamlit** → Frontend (UI)
-- **FastAPI** → Backend (API layer)
-- **Ollama** → Local LLM engine (e.g., LLaMA2, Mistral)
-- **Python** → Core Programming Language
+It demonstrates a full-stack application that enables real-time interaction with a locally running Large Language Model (LLM) using **Streamlit (frontend)**, **FastAPI (backend)**, and **Ollama (local LLM engine)**.
 
 ---
 
-### ✅ Tool Descriptions
+## 🧠 LLMs (Large Language Models)
 
-#### 1. **Streamlit**
-Streamlit is an open-source Python framework for building simple, interactive web apps—especially useful for data science and machine learning.
-
-- Easily turns Python scripts into shareable web apps.
-- Common UI elements: `st.write()`, `st.button()`, `st.file_uploader()`.
-- Used for:
-  - Chat App interface
-  - Document Summarization UI
-
-#### 2. **FastAPI**
-FastAPI is a modern, high-performance Python framework for building APIs with type hints.
-
-- Fast and easy to build scalable REST APIs.
-- Used as backend for the LLM Chat App to:
-  - Receive chat input from Streamlit
-  - Query Ollama for LLM response
-  - Return result to frontend
-
-#### 3. **Ollama**
-Ollama lets you run LLMs locally without internet-based APIs like OpenAI.
-
-- Supports open-source models like **Llama2**, **Mistral**, **Llava**.
-- No external costs and ensures full data privacy.
-- Accessed via simple REST API.
-
-#### 4. **Python**
-A versatile, beginner-friendly language powering all components of the program:
-
-- Backend logic (FastAPI)
-- Frontend UI (Streamlit)
-- LLM inference (Ollama or Hugging Face)
-- PDF handling and NLP tasks
+Large Language Models (LLMs) are AI models trained to understand and generate human-like text. They can answer questions, summarize content, assist in coding, and more.
 
 ---
 
-## 📌 Project 1 — Local LLM Chat App
+## 🛠️ Technologies Involved
 
-### 🛠 Tools Used
-- Python  
-- Streamlit  
-- FastAPI  
-- Ollama  
+| Tool         | Role                    |
+|--------------|--------------------------|
+| **Streamlit** | Frontend (UI)            |
+| **FastAPI**   | Backend (API layer)      |
+| **Ollama**    | Local LLM engine         |
+| **Python**    | Core programming language|
 
-### ⚙️ How to Run
+---
 
-```bash
-# Run backend API
-uvicorn server:app --reload
+### 🔍 Tool Descriptions
 
-# Run Streamlit frontend
-streamlit run app.py
+#### ✅ Streamlit
+Streamlit is an open-source Python framework for building interactive web apps quickly. It's especially used in data science and ML projects. It allows developers to create web UIs using simple Python commands like `st.write()`, `st.button()`, and `st.file_uploader()`.
+
+In this project, **Streamlit is used to create the frontend UI** for the chat application, allowing users to input messages and view LLM-generated responses in a web browser without complex frontend development.
+
+---
+
+#### ✅ FastAPI
+FastAPI is a fast and easy-to-use web framework for building APIs with Python 3.6+ using type hints.
+
+In this project, **FastAPI serves as the backend server** that:
+- Accepts chat input from Streamlit
+- Sends the message to the Ollama LLM
+- Returns the generated response back to Streamlit
+
+---
+
+#### ✅ Ollama
+Ollama is a platform that enables users to run **Large Language Models locally** (offline). It supports open-source models like:
+- **LLaMA2**
+- **Mistral**
+- **LLaVA** (for multi-modal)
+
+Ollama exposes a local API that allows interaction with these models — no internet required, ensuring full privacy and zero API cost.
+
+---
+
+#### ✅ Python
+Python is used for:
+- Building both the **backend (FastAPI)** and **frontend (Streamlit)**
+- Handling communication with Ollama
+- Managing application logic
+
+It’s a top choice for LLM development due to its simplicity and strong library ecosystem.
+
+---
+
+## 🔄 Workflow
+
+1. 💬 **User sends a message via Streamlit UI**
+2. 🚀 **Streamlit calls the FastAPI backend (`/chat` endpoint)**
+3. 🧠 **FastAPI sends the message to Ollama LLM (e.g., LLaMA2)**
+4. 🤖 **Ollama returns a generated response**
+5. 🌐 **Frontend displays the LLM response to the user**
